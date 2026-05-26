@@ -20,7 +20,8 @@ use App\Http\Controllers\{
     EntrenoController,
     EjercicioController,
     SerieEjercicioController,
-    EntrenadorPanelController
+    EntrenadorPanelController,
+    InvitacionController
 };
 
 // --- RUTAS PÚBLICAS ---
@@ -29,7 +30,7 @@ Route::get('/planes', [PlanController::class, 'index']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
 
-
+Route::middleware('auth:sanctum')->post('/invitaciones/enviar', [InvitacionController::class, 'enviar']);
 // --- RUTAS PROTEGIDAS ---
 Route::middleware('auth:sanctum')->group(function () {
 
