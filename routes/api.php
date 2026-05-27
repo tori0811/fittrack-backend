@@ -30,7 +30,6 @@ Route::get('/planes', [PlanController::class, 'index']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
 
-Route::middleware('auth:sanctum')->post('/invitaciones/enviar', [InvitacionController::class, 'enviar']);
 // --- RUTAS PROTEGIDAS ---
 Route::middleware('auth:sanctum')->group(function () {
 
@@ -140,7 +139,10 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::put('/serie/editar/{id}', [SerieEjercicioController::class, 'editar']);
         Route::delete('/serie/eliminar/{id}', [SerieEjercicioController::class, 'eliminar']);
 
+        // --- INVITACIONES ---
+        Route::post('/invitaciones/enviar', [InvitacionController::class, 'enviar']);
 
+    
         // --- PENDIENTE DE IMPLEMENTAR ---
 
         /*

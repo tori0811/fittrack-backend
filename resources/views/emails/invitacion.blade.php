@@ -12,5 +12,5 @@ Crear mi cuenta
 Este enlace expirará en 48 horas.
 
 Gracias,
-{{ config('app.name') }}
+FitTracker
 @endcomponent
